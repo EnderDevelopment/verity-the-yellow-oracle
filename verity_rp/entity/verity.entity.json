@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "verity:verity",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/verity" },
+      "geometry": { "default": "geometry.verity" },
+      "animations": {
+        "idle": "animation.verity.idle",
+        "bounce": "animation.verity.bounce",
+        "talking": "animation.verity.talking",
+        "controller": "controller.animation.verity.main"
+      },
+      "scripts": { "animate": ["controller"] },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

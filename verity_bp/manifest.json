@@ -1,0 +1,19 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Verity Behavior Pack",
+    "description": "A yellow-ball companion with optional trusted-bridge AI chat.",
+    "uuid": "27075b7d-cb38-4f77-9a2b-230ce794c9a1",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    { "type": "data", "uuid": "aabb9a6e-ef1f-452c-813d-d3fa7a5aa655", "version": [1, 0, 0] },
+    { "type": "script", "language": "javascript", "uuid": "9210a6eb-ff94-4a60-9121-4c0c8a41163d", "version": [1, 0, 0], "entry": "scripts/main.js" }
+  ],
+  "dependencies": [
+    { "uuid": "6f59862e-7f61-4c44-9d62-896c8f5076b2", "version": [1, 0, 0] },
+    { "module_name": "@minecraft/server", "version": "2.0.0" },
+    { "module_name": "@minecraft/server-net", "version": "1.0.0-beta" }
+  ]
+}

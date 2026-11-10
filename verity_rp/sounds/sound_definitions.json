@@ -1,0 +1,25 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "verity.voice.greeting": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/voice/verity_greeting",
+          "stream": true,
+          "volume": 1.0
+        }
+      ]
+    },
+    "verity.voice.warning": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/voice/verity_warning",
+          "stream": true,
+          "volume": 1.0
+        }
+      ]
+    }
+  }
+}

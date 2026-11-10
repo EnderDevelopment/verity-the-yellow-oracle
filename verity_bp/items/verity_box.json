@@ -1,0 +1,12 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": { "identifier": "verity:verity_box", "menu_category": { "category": "items" } },
+    "components": {
+      "minecraft:display_name": { "value": "Verity's Box" },
+      "minecraft:icon": { "textures": { "default": "chest" } },
+      "minecraft:max_stack_size": 1,
+      "minecraft:entity_placer": { "entity": "verity:verity" }
+    }
+  }
+}

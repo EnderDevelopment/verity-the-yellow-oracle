@@ -1,0 +1,13 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Verity Resource Pack",
+    "description": "The 3D Verity companion, animations, and voice assets.",
+    "uuid": "6f59862e-7f61-4c44-9d62-896c8f5076b2",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    { "type": "resources", "uuid": "befeea4b-e4c6-4562-b010-7f88a4613e55", "version": [1, 0, 0] }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "verity:verity",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["verity", "mob"] },
+      "minecraft:health": { "value": 24, "max": 24 },
+      "minecraft:collision_box": { "width": 0.9, "height": 0.9 },
+      "minecraft:physics": {},
+      "minecraft:pushable": { "is_pushable": true, "is_pushable_by_piston": true },
+      "minecraft:movement": { "value": 0.28 },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": { "can_path_over_water": true, "avoid_water": true },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": { "priority": 0 },
+      "minecraft:behavior.follow_owner": { "priority": 2, "speed_multiplier": 1.2, "start_distance": 4, "stop_distance": 2, "can_teleport": true },
+      "minecraft:behavior.look_at_player": { "priority": 3, "look_distance": 8, "probability": 0.8 },
+      "minecraft:behavior.random_stroll": { "priority": 6, "speed_multiplier": 0.7 },
+      "minecraft:behavior.random_look_around": { "priority": 7 },
+      "minecraft:tameable": { "probability": 1.0, "tame_items": ["minecraft:gold_nugget"], "tame_event": { "event": "verity:tamed", "target": "self" } },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "Talk to Verity",
+            "on_interact": { "event": "verity:talk", "target": "self" },
+            "use_item": false
+          }
+        ]
+      },
+      "minecraft:timer": { "time": [72000, 72000], "looping": false, "time_down_event": { "event": "verity:turn_evil", "target": "self" } }
+    },
+    "component_groups": {
+      "verity:tamed": { "minecraft:is_tamed": {} },
+      "verity:evil": {
+        "minecraft:attack": { "damage": 6 },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "must_see": true,
+          "reselect_targets": true,
+          "entity_types": [
+            { "filters": { "test": "is_family", "subject": "other", "value": "player" }, "max_dist": 24 }
+          ]
+        },
+        "minecraft:behavior.melee_attack": { "priority": 2, "speed_multiplier": 1.25, "track_target": true }
+      }
+    },
+    "events": {
+      "verity:tamed": { "add": { "component_groups": ["verity:tamed"] } },
+      "verity:talk": {
+        "queue_command": { "command": ["tell @p[r=6] Verity: Hi! Stay close, and keep me safe.", "playsound verity.voice.greeting @p[r=6]"] }
+      },
+      "verity:turn_evil": {
+        "add": { "component_groups": ["verity:evil"] },
+        "queue_command": { "command": ["tell @p[r=32] Verity: The three days are over. Something is coming.", "playsound verity.voice.warning @p[r=32]"] }
+      }
+    }
+  }
+}

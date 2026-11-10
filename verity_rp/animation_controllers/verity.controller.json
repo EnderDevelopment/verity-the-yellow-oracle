@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.verity.main": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": ["idle"],
+          "transitions": [{ "bouncing": "query.is_moving" }]
+        },
+        "bouncing": {
+          "animations": ["bounce"],
+          "transitions": [{ "idle": "!query.is_moving" }]
+        }
+      }
+    }
+  }
+}

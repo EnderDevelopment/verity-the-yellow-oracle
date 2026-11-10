@@ -1,0 +1,9 @@
+{
+  "resource_pack_name": "verity",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "verity": {
+      "textures": "textures/entity/verity"
+    }
+  }
+}
